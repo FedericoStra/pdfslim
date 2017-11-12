@@ -20,7 +20,7 @@ import argparse
 # Lazy way of doing:
 # ['gs', '-q', '-dNOPAUSE', '-dBATCH', '-dSAFER', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-dSimulateOverprint=true', '-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.4', '-dPDFSETTINGS=/ebook', '-dEmbedAllFonts=true', '-dSubsetFonts=true', '-dAutoRotatePages=/None', '-dColorImageDownsampleType=/Bicubic', '-dColorImageResolution=135', '-dGrayImageDownsampleType=/Bicubic', '-dGrayImageResolution=135', '-dMonoImageDownsampleType=/Bicubic', '-dMonoImageResolution=135', '-sOutputFile={outpath}', '{inpath}']
 GS_CMD = """
-gs -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1
+   -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1
    -dSimulateOverprint=true -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
    -dPDFSETTINGS=/ebook -dEmbedAllFonts=true -dSubsetFonts=true
    -dAutoRotatePages=/None
@@ -29,6 +29,11 @@ gs -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1
    -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=135
    -sOutputFile={outpath} {inpath}
 """.split()
+
+if sys.platform in ('win32', 'win64'):
+    GS_CMD.insert(0, 'gswin64c')
+else:
+    GS_CMD.insert(0, 'gs')
 
 
 def pdf_shrink(inpath, outpath):
