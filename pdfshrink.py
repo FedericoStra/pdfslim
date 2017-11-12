@@ -5,6 +5,9 @@ PDF-Shrink v0.1.0 by Federico Stra
 
 `pdfshrink` takes a number of PDF files and tries to optimize them
 through a suitable call to `ghostscript`.
+
+To upgrade run:
+pip3 install --user --upgrade git+https://github.com/FedericoStra/pdfshrink
 """
 
 
