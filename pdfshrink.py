@@ -57,7 +57,7 @@ def main():
         help="the output is the input with .pdf -> .cmp.pdf")
     group.add_argument("--subdir", default='shrunk',
         help="""subdirectory in which to save output
-            (default: %(default)s)""")
+            (default: %(default)s); this is the default option""")
     parser.add_argument("files", metavar='FILES', nargs='+',
         help="input PDF files to convert")
 
