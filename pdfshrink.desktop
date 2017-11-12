@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Hidden=false
+Name=PDF-Shrink
+Exec=pdfshrink %F
+MimeType=application/pdf
+Icon=evince
