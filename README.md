@@ -1,7 +1,7 @@
 PDF-Shrink
 ==========
 
-**PDF-Shrink** v1.0 by *Federico Stra*
+**PDF-Shrink** v0.1.0 by *Federico Stra*
 
 Summary
 -------

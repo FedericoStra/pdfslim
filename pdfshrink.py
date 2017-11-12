@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-PDF-Shrink v1.0 by Federico Stra
+PDF-Shrink v0.1.0 by Federico Stra
 
 `pdfshrink` takes a number of PDF files and tries to optimize them
 through a suitable call to `ghostscript`.

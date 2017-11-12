@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pdfshrink',
-    version='0.0.0',
+    version='0.1.0',
     description='`pdfshrink` takes a number of PDF files and tries to optimize them through a suitable call to `ghostscript`.',
     long_description='Read the README',
     author='Federico Stra',
