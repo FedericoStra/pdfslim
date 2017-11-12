@@ -44,8 +44,6 @@ def subdir_path(inpath, subdir):
 
 
 def main():
-    print(sys.argv)
-
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description=__doc__,
