@@ -6,5 +6,5 @@ Hidden=false
 Name=PDF-Shrink
 Exec=pdfshrink %F
 TryExec=pdfshrink
-MimeType=application/pdf
+MimeType=application/pdf;
 Icon=applications-engineering
