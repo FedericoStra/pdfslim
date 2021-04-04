@@ -7,7 +7,7 @@ with open("README.md") as fp:
 
 setup(
     name="pdfshrink",
-    version="0.1.0",
+    version="0.1.1",
     description="`pdfshrink` takes a number of PDF files and tries to optimize them through a suitable call to `ghostscript`.",
     license="GPLv3",
     author="Federico Stra",
