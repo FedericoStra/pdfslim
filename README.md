@@ -14,5 +14,5 @@ Installation
 To install `pdfshrink` for the first time or upgrade it to the latest version, run the following command at your shell:
 
 ```bash
-pip3 install --user --upgrade git+https://github.com/FedericoStra/pdfshrink
+pip install --upgrade pdfshrink
 ```
