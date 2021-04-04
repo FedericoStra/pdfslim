@@ -7,7 +7,7 @@ with open("README.md") as fp:
 
 setup(
     name="pdfslim",
-    version="0.1.1",
+    version="1.0.0",
     description="`pdfslim` takes a number of PDF files and tries to optimize them through a suitable call to `ghostscript`.",
     license="GPLv3",
     author="Federico Stra",
