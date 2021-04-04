@@ -69,9 +69,6 @@ def main():
 
     args = parser.parse_args()
 
-    def cleanup():
-        pass
-
     if args.inplace:
         tmpdir = tempfile.mkdtemp(prefix='pdfshrink_')
         def outputter(inpath):
@@ -82,9 +79,13 @@ def main():
         def outputter(inpath):
             name, ext = os.path.splitext(inpath)
             return name + ".cmp" + ext
+        def cleanup():
+            pass
     else:
         def outputter(inpath):
             return subdir_path(inpath, args.subdir)
+        def cleanup():
+            pass
 
     for inpath in args.files:
         outpath = outputter(inpath)
