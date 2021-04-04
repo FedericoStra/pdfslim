@@ -6,23 +6,23 @@ with open("README.md") as fp:
     long_description = fp.read()
 
 setup(
-    name="pdfshrink",
+    name="pdfslim",
     version="0.1.1",
-    description="`pdfshrink` takes a number of PDF files and tries to optimize them through a suitable call to `ghostscript`.",
+    description="`pdfslim` takes a number of PDF files and tries to optimize them through a suitable call to `ghostscript`.",
     license="GPLv3",
     author="Federico Stra",
     author_email="stra.federico@gmail.com",
-    url="https://github.com/FedericoStra/pdfshrink",
+    url="https://github.com/FedericoStra/pdfslim",
     project_urls={
-        "Code": "https://github.com/FedericoStra/pdfshrink",
-        "Issue tracker": "https://github.com/FedericoStra/pdfshrink/issues",
+        "Code": "https://github.com/FedericoStra/pdfslim",
+        "Issue tracker": "https://github.com/FedericoStra/pdfslim/issues",
     },
     # packages=find_packages(),
-    py_modules=["pdfshrink"],
+    py_modules=["pdfslim"],
     install_requires=[],
     entry_points={
         "console_scripts": [
-            "pdfshrink=pdfshrink:main",
+            "pdfslim=pdfslim:main",
         ],
     },
     long_description=long_description,

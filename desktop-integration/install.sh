@@ -2,5 +2,5 @@
 
 DST=~/.local/share/applications
 
-cp pdfshrink.desktop $DST
+cp pdfslim.desktop $DST
 update-desktop-database $DST

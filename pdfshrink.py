@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 """
-PDF-Shrink v0.1.1 by Federico Stra
+PDF-Slim v0.1.1 by Federico Stra
 
-`pdfshrink` takes a number of PDF files and tries to optimize them
+`pdfslim` takes a number of PDF files and tries to optimize them
 through a suitable call to `ghostscript`.
 
 To upgrade run:
-pip3 install --user --upgrade git+https://github.com/FedericoStra/pdfshrink
+pip3 install --user --upgrade git+https://github.com/FedericoStra/pdfslim
 """
 
 
@@ -83,7 +83,7 @@ def main():
     args = parser.parse_args()
 
     if args.inplace:
-        tmpdir = tempfile.mkdtemp(prefix="pdfshrink_")
+        tmpdir = tempfile.mkdtemp(prefix="pdfslim_")
 
         def outputter(inpath):
             return os.path.join(tmpdir, os.path.basename(inpath))
