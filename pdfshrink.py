@@ -20,8 +20,7 @@ import argparse
 
 
 # WARNING!!! Don't use whitespaces!!!
-# Lazy way of doing:
-# ['gs', '-q', '-dNOPAUSE', '-dBATCH', '-dSAFER', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-dSimulateOverprint=true', '-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.4', '-dPDFSETTINGS=/ebook', '-dEmbedAllFonts=true', '-dSubsetFonts=true', '-dAutoRotatePages=/None', '-dColorImageDownsampleType=/Bicubic', '-dColorImageResolution=135', '-dGrayImageDownsampleType=/Bicubic', '-dGrayImageResolution=135', '-dMonoImageDownsampleType=/Bicubic', '-dMonoImageResolution=135', '-sOutputFile={outpath}', '{inpath}']
+# Lazy way of writing a list of strings.
 GS_CMD = """
    -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1
    -dSimulateOverprint=true -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
@@ -40,17 +39,23 @@ else:
 
 
 def pdf_shrink(inpath, outpath):
+    """Shrink `inpath` and write the result to `outpath`."""
     cmd = [s.format(inpath=inpath, outpath=outpath) for s in GS_CMD]
     subprocess.check_call(cmd)
 
 
 def subdir_path(inpath, subdir):
+    """Path corresponding to `inpath` moved in `subdir`."""
     basedir, basename = os.path.split(inpath)
     os.makedirs(os.path.join(basedir, subdir), exist_ok=True)
     return os.path.join(basedir, subdir, basename)
 
 
 def main():
+    """
+    Parse the command line arguments and run the program.
+    """
+
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description=__doc__,
