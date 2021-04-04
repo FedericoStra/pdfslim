@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-PDF-Slim v1.0.0 by Federico Stra
+PDF-Slim v1.0.2 by Federico Stra
 
 `pdfslim` takes a number of PDF files and tries to optimize them
 through a suitable call to `ghostscript`.
