@@ -33,15 +33,14 @@ GS_CMD = """
    -sOutputFile={outpath} {inpath}
 """.split()
 
-if sys.platform in ('win32', 'win64'):
-    GS_CMD.insert(0, 'gswin64c')
+if sys.platform in ("win32", "win64"):
+    GS_CMD.insert(0, "gswin64c")
 else:
-    GS_CMD.insert(0, 'gs')
+    GS_CMD.insert(0, "gs")
 
 
 def pdf_shrink(inpath, outpath):
-    cmd = [s.format(inpath=inpath, outpath=outpath)
-        for s in GS_CMD]
+    cmd = [s.format(inpath=inpath, outpath=outpath) for s in GS_CMD]
     subprocess.check_call(cmd)
 
 
@@ -55,35 +54,52 @@ def main():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description=__doc__,
-        epilog="Copyright 2017 Federico Stra")
+        epilog="Copyright 2017 Federico Stra",
+    )
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("--inplace", action='store_true',
-        help="shrink the files inplace")
-    group.add_argument("--rename", action='store_true',
-        help="the output is the input with .pdf -> .cmp.pdf")
-    group.add_argument("--subdir", default='shrunk',
+    group.add_argument(
+        "--inplace", action="store_true", help="shrink the files inplace"
+    )
+    group.add_argument(
+        "--rename",
+        action="store_true",
+        help="the output is the input with .pdf -> .cmp.pdf",
+    )
+    group.add_argument(
+        "--subdir",
+        default="shrunk",
         help="""subdirectory in which to save output
-            (default: %(default)s); this is the default option""")
-    parser.add_argument("files", metavar='FILES', nargs='+',
-        help="input PDF files to convert")
+            (default: %(default)s); this is the default option""",
+    )
+    parser.add_argument(
+        "files", metavar="FILES", nargs="+", help="input PDF files to convert"
+    )
 
     args = parser.parse_args()
 
     if args.inplace:
-        tmpdir = tempfile.mkdtemp(prefix='pdfshrink_')
+        tmpdir = tempfile.mkdtemp(prefix="pdfshrink_")
+
         def outputter(inpath):
             return os.path.join(tmpdir, os.path.basename(inpath))
+
         def cleanup():
             shutil.rmtree(tmpdir)
+
     elif args.rename:
+
         def outputter(inpath):
             name, ext = os.path.splitext(inpath)
             return name + ".cmp" + ext
+
         def cleanup():
             pass
+
     else:
+
         def outputter(inpath):
             return subdir_path(inpath, args.subdir)
+
         def cleanup():
             pass
 
@@ -97,5 +113,5 @@ def main():
     cleanup()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())
