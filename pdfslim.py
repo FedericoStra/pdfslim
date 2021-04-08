@@ -22,14 +22,12 @@ import argparse
 # WARNING!!! Don't use whitespaces!!!
 # Lazy way of writing a list of strings.
 GS_CMD = """
-   -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1
-   -dSimulateOverprint=true -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
-   -dPDFSETTINGS=/ebook -dEmbedAllFonts=true -dSubsetFonts=true
-   -dAutoRotatePages=/None
-   -dColorImageDownsampleType=/Bicubic -dColorImageResolution=135
-   -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=135
-   -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=135
-   -sOutputFile={outpath} {inpath}
+    -q -dBATCH -dSAFER -dNOPAUSE -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
+    -dPDFSETTINGS=/ebook -dAutoRotatePages=/None
+    -dColorImageDownsampleType=/Bicubic -dColorImageResolution=135
+    -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=135
+    -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=135
+    -sOutputFile={outpath} {inpath}
 """.split()
 
 if sys.platform in ("win32", "win64"):
