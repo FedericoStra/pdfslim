@@ -6,7 +6,8 @@ PDF-Slim
 Summary
 -------
 
-`pdfslim` takes a number of PDF files and tries to optimize them through a suitable call to `ghostscript`. It is specifically fitted to reduce teh size of scanned papers, containing images with humongous resolution.
+`pdfslim` takes a number of PDF files and tries to optimize them through a suitable call to `ghostscript`.
+It is specifically fitted to reduce the size of scanned papers, containing images with humongous resolution.
 
 Installation
 ------------
